@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="JavaScript/JavaScript_1.js" defer></script>
+    </head>
+    <body>
+        <h1>What is your favorite color?</h1>
+        <h3>Pick your favorite color from this list:</h3>
+        <ul>
+            <li class='color'>Red</li>
+            <li class='color'>Yellow</li>
+            <li class='color'>Green</li>
+            <li class='color'>Blue</li>
+            <li class='color'>Pink</li>
+            <li class='color'>Purple</li>
+        </ul>
+        <h3>Enter your choice below:</h3>
+
+        <input id="colorInput" type="text">
+        <button onclick="colorFn()">Submit Color</button>
+        <p id="Output"></p>
+
+        <hr>
+
+        <canvas id="myCanvas"
+                width="500"
+                height="500"
+                style="border: 5px solid black; border-radius: 10px;">
+        </canvas>
+
+        <script>
+            /*Deal with classes*/
+            const allColors = document.getElementsByClassName('color');
+            console.log(allColors);
+
+            /* Draw on Canvas */
+            var c = document.getElementById('myCanvas');
+            var ctx = c.getContext("2d");
+            
+            /* Draw line */
+            ctx.moveTo(0,0);
+            ctx.lineTo(200,100);
+            ctx.stroke();
+
+            /* Draw gradiant */
+            const grd = ctx.createLinearGradient(0,0,170,0);
+            grd.addColorStop(0, "black");
+            grd.addColorStop(1, "white");
+
+            ctx.fillStyle = grd;
+            ctx.fillRect(20,20,150,100);
+
+        </script>
+    </body>
+</html>

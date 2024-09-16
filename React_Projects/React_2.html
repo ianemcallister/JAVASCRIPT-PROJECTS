@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- React CDN Links -->
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+    </head>
+    <body>
+        <div id="like_button_container"></div>
+        <script>
+            const X = React.createElement;
+
+            class likeButton extends React.Component {
+                constructor(props) {
+                    super(props);
+                    this.state = { liked: false };
+                }
+
+                render() {
+                    if (this.state.liked) {
+                        return "You clicked the like button!"
+                    }
+
+                    return X(
+                        'button',
+                        { onClick: () => this.setState({ liked: true})},
+                        'Like'
+                    );
+                }
+            }
+
+            const domContainer = document.querySelector('#like_button_container');
+            ReactDOM.render(X(likeButton), domContainer);
+        </script>
+    </body>
+</html>

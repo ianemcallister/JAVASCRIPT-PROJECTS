@@ -1,6 +1,16 @@
 html {
-    font-size: 70%;
+    font-size: 1vw;
     box-sizing: border-box;
+}
+
+body {
+    opacity: 1;
+    transition: 1s opacity;
+}
+
+body.fade-out {
+    opacity: 0;
+    transition: none;
 }
 
 *, *::before, *::after {

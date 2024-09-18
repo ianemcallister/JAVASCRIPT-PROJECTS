@@ -62,3 +62,13 @@ function getReceipt() {
         document.getElementById("TotalPrice").innerHTML = "<h3>Total: <strong>$" + runningTotal + ".00" + "</strong></h3>";
     }
 }
+
+// Form phone validation
+function validateForm() {
+    console.log('running validateForm');
+    let x = document.forms['order']['phoneNumber'].value;
+    if(x == "") {
+        alert('Phone number must be filled out');
+        return false;
+    }
+}
